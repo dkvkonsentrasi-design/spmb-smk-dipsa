@@ -1,0 +1,1166 @@
+/* =========================================================
+   SMK DIPSA PURWOKERTO
+   Visual direction: editorial / institutional / modern
+   Inspired by the structure of Harvard's website, but
+   designed with original branding and content for SMK DIPSA.
+   ========================================================= */
+
+:root {
+  --ink: #101114;
+  --muted: #626872;
+  --paper: #f4f1ea;
+  --white: #ffffff;
+  --accent: #8f1d2c;
+  --accent-dark: #67121f;
+  --line: rgba(16, 17, 20, .15);
+  --max: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 92px;
+  padding: 20px 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: .04em;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 29px;
+  border: 1px solid rgba(255,255,255,.45);
+  clip-path: polygon(0 0,100% 0,100% 78%,50% 100%,0 78%);
+}
+
+.brand strong {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
+.brand small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  letter-spacing: .25em;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.desktop-nav a {
+  opacity: .92;
+  transition: opacity .2s, transform .2s;
+}
+
+.desktop-nav a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255,255,255,.5);
+  background: rgba(0,0,0,.18);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: white;
+  margin: 5px auto;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
+
+  background-image: url("./images/hero-dipsa.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   OVERLAY UTAMA
+   Gelap dari kiri ke kanan agar semua tulisan terbaca
+   ========================================================= */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.62) 25%,
+      rgba(0, 0, 0, 0.42) 50%,
+      rgba(0, 0, 0, 0.18) 75%,
+      rgba(0, 0, 0, 0.08) 100%
+    );
+}
+
+
+/* =========================================================
+   OVERLAY BAWAH
+   Membuat bagian deskripsi dan tombol lebih jelas
+   ========================================================= */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+
+  height: 55%;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 7, 10, 0.92) 0%,
+      rgba(5, 7, 10, 0.72) 25%,
+      rgba(5, 7, 10, 0.38) 55%,
+      rgba(5, 7, 10, 0.08) 85%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   OVERLAY TAMBAHAN
+   Sedikit vignette supaya fokus berada di bagian kiri
+   ========================================================= */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 35% 45%,
+      rgba(0, 0, 0, 0.10) 0%,
+      rgba(0, 0, 0, 0.25) 55%,
+      rgba(0, 0, 0, 0.38) 100%
+    );
+}
+
+
+/* =========================================================
+   KONTEN HERO
+   ========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+
+  width: min(820px, 90%);
+
+  margin-left: 8vw;
+  padding-top: 80px;
+}
+
+
+/* =========================================================
+   LABEL ATAS
+   ========================================================= */
+
+.eyebrow,
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin-bottom: 25px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.75);
+}
+
+
+/* =========================================================
+   JUDUL HERO
+   ========================================================= */
+
+.hero h1,
+h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -.035em;
+}
+
+.hero h1 {
+  max-width: 850px;
+
+  font-size: clamp(58px, 8vw, 112px);
+  line-height: .94;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.65);
+}
+
+
+/* =========================================================
+   JUDUL WARNA PINK
+   ========================================================= */
+
+.hero h1 em,
+h2 em {
+  color: #f0a8b3;
+  font-style: normal;
+}
+
+.hero h1 em {
+  text-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.65);
+}
+
+
+/* =========================================================
+   DESKRIPSI
+   ========================================================= */
+
+.hero-text {
+  max-width: 620px;
+
+  margin-top: 30px;
+
+  font-size: 18px;
+  line-height: 1.7;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.75);
+}
+
+
+/* =========================================================
+   TOMBOL HERO
+   ========================================================= */
+
+.hero-actions {
+  position: relative;
+  z-index: 4;
+
+  margin-top: 38px;
+
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+
+  padding: 0 24px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+
+  border: 1px solid transparent;
+
+  transition: .2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-light {
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.button-dark {
+  color: #ffffff;
+  background: var(--ink);
+}
+
+.text-link,
+.arrow-link {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.text-link span,
+.arrow-link span {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   SCROLL
+   ========================================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  z-index: 4;
+
+  right: 5vw;
+  bottom: 38px;
+
+  color: #ffffff;
+
+  font-size: 10px;
+  letter-spacing: .2em;
+
+  text-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.75);
+}
+
+.hero-scroll span {
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+.section {
+  width: min(var(--max), 90%);
+  margin: 0 auto;
+  padding: 120px 0;
+}
+
+.section-label {
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.intro {
+  background: var(--paper);
+}
+
+.intro-grid,
+.section-heading {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 80px;
+  align-items: end;
+}
+
+h2 {
+  font-size: clamp(46px, 6vw, 82px);
+  line-height: 1;
+}
+
+.intro-copy {
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.intro-copy p {
+  margin-bottom: 28px;
+}
+
+.arrow-link {
+  color: var(--accent);
+}
+
+.programs {
+  padding-top: 20px;
+}
+
+.section-heading {
+  margin-bottom: 55px;
+}
+
+.section-heading > p {
+  color: var(--muted);
+  max-width: 360px;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.program-card {
+  position: relative;
+  min-height: 420px;
+  padding: 36px;
+  padding-bottom: 75px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  overflow: hidden;
+
+  transition: .25s ease;
+}
+
+/* OVERLAY AGAR TEKS TETAP TERBACA */
+.program-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.20),
+    rgba(0, 0, 0, 0.80)
+  );
+  z-index: 0;
+}
+
+/* ISI CARD DI ATAS GAMBAR */
+.program-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================
+   BACKGROUND SESUAI PROGRAM KEAHLIAN
+   ========================================= */
+
+/* 01 - Teknik Sepeda Motor */
+.program-card:nth-child(1) {
+  background-image: url("https://images.unsplash.com/photo-1762604462286-472334549804?auto=format&fit=crop&w=1200&q=85");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* 02 - Desain Komunikasi Visual */
+.program-card:nth-child(2) {
+  background-image: url("https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=85");
+}
+
+/* 03 - Manajemen Perkantoran */
+.program-card:nth-child(3) {
+  background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* =========================================
+   HOVER
+   ========================================= */
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-card:hover::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(143, 29, 44, 0.20),
+    rgba(0, 0, 0, 0.85)
+  );
+}
+
+
+/* =========================================
+   NOMOR
+   ========================================= */
+
+.card-number {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .15em;
+}
+
+
+/* =========================================
+   JUDUL
+   ========================================= */
+
+.program-card h3 {
+  margin-top: 78px;
+  font-family: "Playfair Display", serif;
+  font-size: 31px;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   DESKRIPSI
+   ========================================= */
+
+.program-card p {
+  margin-top: 15px;
+  color: rgba(255,255,255,.88);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   SELENGKAPNYA
+   ========================================= */
+
+.program-card a {
+  position: absolute;
+  left: 36px;
+  bottom: 30px;
+
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.feature {
+  min-height: 680px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.feature-image {
+  min-height: 580px;
+
+  background:
+    linear-gradient(
+      rgba(18, 20, 24, .10),
+      rgba(18, 20, 24, .35)
+    ),
+    url("./images/kegiatan-siswa.jpg")
+    center center / cover no-repeat;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 9vw;
+  background: #ded8ca;
+}
+
+.feature-content h2 {
+  font-size: clamp(44px, 5vw, 72px);
+}
+
+.feature-content p {
+  max-width: 500px;
+  margin: 30px 0;
+  color: #56534d;
+}
+
+.news {
+  background: var(--paper);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.news-card {
+  border-top: 1px solid var(--line);
+}
+
+.news-image {
+  aspect-ratio: 16/10;
+  margin-bottom: 25px;
+  background-size: cover;
+  background-position: center top;
+}
+
+.news-image-1 {
+  background-image: url("./images/berita-1.png");
+}
+
+.news-image-2 {
+  background-image: url("./images/berita-2.jpg");
+}
+
+.news-image-3 {
+  background-image: url("./images/berita-3.png");
+}
+
+.news-body span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.news-body h3 {
+  margin-top: 13px;
+  font-family: "Playfair Display", serif;
+  font-size: 29px;
+  line-height: 1.12;
+}
+
+.news-body p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.admission {
+  background: var(--accent);
+  color: white;
+  padding: 105px 5vw;
+}
+
+.admission-inner {
+  width: min(var(--max), 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 80px;
+  align-items: end;
+}
+
+.admission .section-label {
+  color: #f2c7ce;
+}
+
+.admission h2 em {
+  color: #f1c0c8;
+}
+
+.admission p {
+  color: rgba(255,255,255,.78);
+  max-width: 420px;
+  margin-bottom: 28px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+  background: #0c0d0f;
+  color: white;
+  padding: 80px 5vw 55px;
+}
+
+
+/* =========================================================
+   FOOTER ATAS
+   3 KOLOM
+   ========================================================= */
+
+.footer-grid {
+  width: min(var(--max), 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 70px;
+
+  text-align: center;
+
+  padding-bottom: 90px;
+}
+
+
+/* JUDUL KOLOM */
+
+.site-footer h3 {
+  margin-bottom: 24px;
+
+  color: #ffffff;
+
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 0;
+}
+
+
+/* LINK FOOTER */
+
+.site-footer a {
+  display: block;
+
+  color: #9aa0a8;
+
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  margin-bottom: 15px;
+
+  transition:
+    color .2s ease,
+    transform .2s ease;
+}
+
+.site-footer a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BRAND TENGAH
+   ========================================================= */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.footer-brand h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: .06em;
+}
+
+.footer-brand p {
+  margin-top: 7px;
+
+  color: #ffffff;
+
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 12px;
+
+  letter-spacing: .22em;
+}
+
+
+/* =========================================================
+   LOGO FOOTER
+   ========================================================= */
+
+.footer-mark {
+  width: 58px;
+  height: 68px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 18px;
+
+  background: var(--accent);
+  color: #ffffff;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 78%,
+    50% 100%,
+    0 78%
+  );
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+
+/* =========================================================
+   FOOTER BAGIAN BAWAH
+   KIRI - TENGAH - KANAN
+   ========================================================= */
+
+.footer-bottom {
+  width: min(var(--max), 100%);
+  margin: 0 auto;
+
+  padding-top: 35px;
+
+  border-top: 1px solid #292b2f;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   COPYRIGHT KIRI
+   ========================================================= */
+
+.footer-copyright {
+  color: #8f959d;
+
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  max-width: 350px;
+}
+
+
+/* =========================================================
+   BRAND TENGAH
+   ========================================================= */
+
+.footer-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA
+   Instagram - TikTok - Facebook - YouTube
+   ========================================================= */
+
+.footer-social {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 22px;
+}
+
+.footer-social a {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+
+  color: #9299a1;
+
+  font-size: 21px;
+
+  transition:
+    color .2s ease,
+    transform .2s ease;
+}
+
+.footer-social a:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    padding-bottom: 70px;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-center {
+    order: 3;
+
+    grid-column: 1 / -1;
+  }
+
+  .footer-social {
+    justify-content: flex-end;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .site-footer {
+    padding: 60px 7vw 35px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+
+    padding-bottom: 60px;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    text-align: center;
+  }
+
+  .footer-copyright {
+    max-width: none;
+    text-align: center;
+  }
+
+  .footer-center {
+    order: 0;
+    grid-column: auto;
+  }
+
+  .footer-social {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-brand h2 {
+    font-size: 27px;
+  }
+
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    z-index: 15;
+    inset: 0 0 auto;
+    padding: 105px 7vw 30px;
+    background: #101114;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transform: translateY(-110%);
+    transition: transform .3s ease;
+  }
+
+  .mobile-nav.open {
+    transform: translateY(0);
+  }
+
+  .mobile-nav a {
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+  }
+
+  .hero-content {
+    margin-left: 6vw;
+  }
+
+  .intro-grid,
+  .section-heading,
+  .admission-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .program-grid,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-image {
+    min-height: 420px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    min-height: 76px;
+    padding: 15px 5vw;
+  }
+
+  .brand strong {
+    font-size: 17px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 48px;
+  }
+
+  .hero {
+    min-height: 820px;
+  }
+
+  .hero-content {
+    width: 88%;
+    margin-left: 6vw;
+  }
+
+  .hero h1 {
+    font-size: 53px;
+  }
+
+  .hero-text {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .program-card {
+  min-height: 380px;
+}
+
+  .feature-content {
+    padding: 65px 7vw;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    padding-bottom: 50px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+
+/* Portal SPMB additions */
+:root{--navy:var(--accent);--gold:var(--accent);--line:#d9d4cb}
+button{font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;border:0;background:var(--accent);color:white;padding:13px 20px;transition:background .2s}
+button:hover{background:var(--accent-dark)}button.secondary{background:white;color:var(--ink);border:1px solid var(--line)}
+.nav-login{background:white;color:var(--ink);padding:11px 17px}.nav-login:hover{background:#f0a8b3;color:var(--ink)}
+.hero-login{background:transparent;color:white;padding:12px 0}.hero-login:hover{background:transparent;color:#f0a8b3}
+.hero .button-light:hover,.admission .button-light:hover{background:#f0a8b3;color:var(--ink)}
+.program-card{background-color:#242428}.program-apply{position:absolute;z-index:2;left:36px;bottom:30px;background:transparent;padding:0;color:white}.program-apply:hover{background:transparent;color:#f0a8b3}
+.admission-login{border:1px solid #ffffff70;background:transparent}.admission-login:hover{background:#67121f}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}.steps-grid article{border-top:1px solid var(--line);padding-top:24px}.steps-grid span{color:var(--accent);font-size:12px;font-weight:700}.steps-grid h3{font:25px 'Playfair Display',Georgia,serif;margin:20px 0 12px}.steps-grid p{font-size:14px;color:var(--muted)}
+.site-footer .footer-grid{grid-template-columns:1.1fr .8fr .9fr 1.2fr;text-align:left;gap:40px}.site-footer .footer-brand{text-align:left;align-items:flex-start}.site-footer p{font-size:14px;color:#a0a5ad}.site-footer .footer-bottom{display:flex;justify-content:space-between;font-size:12px;color:#9aa0a8}.footer-login{padding:0;background:transparent;color:#9aa0a8;margin-bottom:15px;text-align:left}.footer-login:hover{background:transparent;color:white}
+body.portal-view .site-header{position:relative;background:#101114}.portal-view .mobile-nav{z-index:21;top:92px;padding-top:25px}.portal-view .site-header{z-index:22}.dashboard{max-width:1440px;margin:auto;min-height:65vh}.dashboard h2,dialog h2{font-size:clamp(32px,4vw,50px);margin:15px 0}.dashboard p,dialog p{line-height:1.7;color:var(--muted)}.card{background:white;border:1px solid var(--line);padding:30px}.dashboard h3{margin:16px 0}.dashboard .eyebrow,dialog .eyebrow{color:var(--accent);text-shadow:none;margin:0}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.muted{font-size:12px;color:var(--muted)}
+.dashboard{padding:40px 6%}.dashhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:25px 0}.stat{padding:22px;background:white;border:1px solid var(--line)}.stat strong{display:block;font-size:30px}.stat span{font-size:12px;color:#687780}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}label{display:block;font-size:12px;font-weight:600;margin-bottom:6px}input,select,textarea{width:100%;border:1px solid #c8d1d5;background:white;padding:12px;font:inherit;font-size:14px;border-radius:3px}textarea{min-height:85px}.full{grid-column:1/-1}fieldset{border:0;border-top:1px solid var(--line);padding:22px 0;margin:20px 0}legend{font-weight:700;padding-right:15px}dialog{width:min(760px,94vw);border:0;padding:35px;max-height:90vh;color:var(--navy)}dialog::backdrop{background:#102735bb}.close{float:right;background:transparent;color:var(--navy);font-size:24px;padding:0 8px}.badge{padding:7px 12px;background:#eaf0f3;border-radius:30px;display:inline-block;font-size:12px}.badge.accepted{background:#ddf0e3;color:#246440}.badge.rejected{background:#f7e4e4;color:#8b3434}.filters{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.filters label{flex:1;min-width:130px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:16px 12px;border-bottom:1px solid var(--line)}th{background:#edf1f2;font-size:11px;text-transform:uppercase;letter-spacing:1px}#notice{position:fixed;bottom:25px;right:25px;max-width:450px;background:var(--navy);color:white;padding:16px 22px;display:none;z-index:10}
+#notice{position:fixed;bottom:25px;right:25px;max-width:min(450px,90vw);background:#101114;color:white;padding:16px 22px;display:none;z-index:50}
+:focus-visible{outline:3px solid #d5909a;outline-offset:4px}.badge.accepted{background:#ddf0e3;color:#246440}.badge.rejected{background:#f7e4e4;color:#8b3434}
+@media(max-width:900px){.steps-grid{grid-template-columns:1fr;gap:25px}.site-footer .footer-grid{grid-template-columns:1fr 1fr}.mobile-nav .nav-login{align-self:flex-start}.stats{grid-template-columns:1fr 1fr}.dashhead{align-items:start;gap:15px}.portal-view .mobile-nav{top:92px}}
+@media(max-width:600px){.hero{min-height:760px;min-height:100svh}.hero-content{padding:135px 0 85px}.hero h1{font-size:clamp(42px,10vw,58px)}.hero-actions{gap:14px}.site-footer .footer-grid{grid-template-columns:1fr}.site-footer .footer-bottom{flex-direction:column;align-items:flex-start}.dashboard{padding:30px 5%}.formgrid,.stats{grid-template-columns:1fr}.full{grid-column:auto}dialog{padding:24px}.card{padding:22px}.portal-view .mobile-nav{top:78px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.reveal{opacity:1;transform:none}}
+@media print{.site-header,.mobile-nav,.site-footer,.actions,button,.filters{display:none!important}.dashboard{padding:0}.card{border:0}body{background:white}.dashboard h2{font-size:30px}}
