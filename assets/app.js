@@ -117,8 +117,8 @@ function home(){document.body.classList.remove("portal-view");app.innerHTML=`
           <div class="news-image news-image-1"></div>
           <div class="news-body">
             <span>SEKOLAH • 2026</span>
-            <h3>Selamat Datang di Website SMK DIPSA</h3>
-            <p>Ruang informasi sekolah yang lebih modern, sederhana, dan mudah diakses.</p>
+            <h3>Program Pelatihan Bahasa Jepang dan Pelatiahan 1 Tahun Jago Programming</h3>
+            <p>Pelatihan-pelatihan untuk mendukung siap bekerja di dalam Negeri maupun Luar Negeri.</p>
           </div>
         </article>
         <article class="news-card">
