@@ -14,7 +14,7 @@ function home(){document.body.classList.remove("portal-view");app.innerHTML=`
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="eyebrow">PORTAL SPMB • TAHUN AJARAN ${esc(cfg.schoolYear)}</p>
-        <h1>Membentuk Generasi<br><em>Siap Berkarya.</em>#DipSaNextLevel</em></h1>
+        <h1>Membentuk Generasi<br><em>Siap Berkarya.</em><br>#DipSaNextLevel</em></h1>
         <p class="hero-text">
           Pendidikan kejuruan yang menggabungkan karakter, kompetensi,
           teknologi, dan pengalaman nyata untuk menyiapkan siswa menghadapi masa depan.
