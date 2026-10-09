@@ -116,7 +116,7 @@ function home(){document.body.classList.remove("portal-view");app.innerHTML=`
         <article class="news-card">
           <div class="news-image news-image-1"></div>
           <div class="news-body">
-            <span>SEKOLAH • 2026</span>
+            <span>KEGIATAN • 2026</span>
             <h3>Program Pelatihan Bahasa Jepang</h3>
             <p>Pelatihan untuk mendukung siap bekerja di Luar Negeri.</p>
           </div>
@@ -132,7 +132,7 @@ function home(){document.body.classList.remove("portal-view");app.innerHTML=`
         <article class="news-card">
           <div class="news-image news-image-3"></div>
           <div class="news-body">
-            <span>INFORMASI • 2026</span>
+            <span>KEGIATAN • 2026</span>
             <h3>Pelatiahan 1 Tahun Jago Programming</h3>
             <p>Pelatihan untuk mendukung siap menghadapi dunia digital.</p>
           </div>
