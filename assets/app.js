@@ -144,7 +144,7 @@ function home(){document.body.classList.remove("portal-view");app.innerHTML=`
       <div class="admission-inner">
         <div>
           <div class="section-label">06 — SPMB</div>
-          <h2>Siap memulai<br><em>masa depanmu?</em></h2>
+          <h2>Siap memulai<br><em>masa depanmu?<br><em>#DipSaNextLevel</em></h2>
         </div>
         <div>
           <p>Temukan potensi, asah keterampilan, dan bersiaplah menjadi generasi yang siap menghadapi dunia.</p>
