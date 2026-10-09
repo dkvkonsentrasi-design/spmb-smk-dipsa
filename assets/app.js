@@ -20,7 +20,7 @@ function home(){document.body.classList.remove("portal-view");app.innerHTML=`
           teknologi, dan pengalaman nyata untuk menyiapkan siswa menghadapi masa depan.
         </p>
         <div class="hero-actions">
-          <button class="button button-light" data-action="register">Daftar siswa baru ↗</button>
+          <button class="button button-light" data-action="register">Buat Akun ↗</button>
           <button class="text-link hero-login" data-action="login">Sudah punya akun? Masuk <span>→</span></button>
         </div>
       </div>
@@ -148,7 +148,7 @@ function home(){document.body.classList.remove("portal-view");app.innerHTML=`
         </div>
         <div>
           <p>Temukan potensi, asah keterampilan, dan bersiaplah menjadi generasi yang siap menghadapi dunia.</p>
-          <div class="actions"><button class="button button-light" data-action="register">Mulai pendaftaran ↗</button><button class="button admission-login" data-action="login">Masuk portal</button></div>
+          <div class="actions"><button class="button button-light" data-action="register">Buat Akun ↗</button><button class="button admission-login" data-action="login">Masuk portal</button></div>
         </div>
       </div>
     </section>
