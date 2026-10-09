@@ -117,8 +117,8 @@ function home(){document.body.classList.remove("portal-view");app.innerHTML=`
           <div class="news-image news-image-1"></div>
           <div class="news-body">
             <span>SEKOLAH • 2026</span>
-            <h3>Program Pelatihan Bahasa Jepang dan Pelatiahan 1 Tahun Jago Programming</h3>
-            <p>Pelatihan-pelatihan untuk mendukung siap bekerja di dalam Negeri maupun Luar Negeri.</p>
+            <h3>Program Pelatihan Bahasa Jepang</h3>
+            <p>Pelatihan untuk mendukung siap bekerja di Luar Negeri.</p>
           </div>
         </article>
         <article class="news-card">
@@ -133,8 +133,8 @@ function home(){document.body.classList.remove("portal-view");app.innerHTML=`
           <div class="news-image news-image-3"></div>
           <div class="news-body">
             <span>INFORMASI • 2026</span>
-            <h3>Informasi Sistem Penerimaan Murid Baru</h3>
-            <p>Saatnya memilih sekolah yang membawamu lebih dekat dengan cita-cita.</p>
+            <h3>Pelatiahan 1 Tahun Jago Programming</h3>
+            <p>Pelatihan untuk mendukung siap menghadapi dunia digital.</p>
           </div>
         </article>
       </div>
