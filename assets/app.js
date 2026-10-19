@@ -133,7 +133,7 @@ function home(){document.body.classList.remove("portal-view");app.innerHTML=`
           <div class="news-image news-image-3"></div>
           <div class="news-body">
             <span>KEGIATAN • 2026</span>
-            <h3>Pelatiahan 1 Tahun Jago Programming</h3>
+            <h3>Pelatihan 1 Tahun Jago Programming</h3>
             <p>Pelatihan untuk mendukung siap menghadapi dunia digital.</p>
           </div>
         </article>
